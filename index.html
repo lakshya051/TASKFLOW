@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow - Personal Productivity Companion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="landing-page">
+  <div class="landing-container">
+    <div class="landing-content">
+      <div class="logo-section">
+        <div class="logo">
+          <span class="logo-icon">📋</span>
+          <h1 class="logo-text">TaskFlow</h1>
+        </div>
+        <p class="tagline">Your Personal Productivity Companion</p>
+      </div>
+
+      <div class="form-section">
+        <h2>Welcome! Let's get you started</h2>
+        <p class="form-subtitle">Please provide your details to access TaskFlow</p>
+        
+        <form id="user-form" class="user-form">
+          <div class="input-group">
+            <label for="name">Full Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name"
+              placeholder="Enter your full name"
+              required 
+              autocomplete="name"
+            >
+            <span class="input-error" id="name-error"></span>
+          </div>
+
+          <div class="input-group">
+            <label for="dob">Date of Birth</label>
+            <input 
+              type="date" 
+              id="dob" 
+              name="dob"
+              required 
+              max=""
+            >
+            <span class="input-error" id="dob-error"></span>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submit-btn">
+            <span class="btn-text">Enter TaskFlow</span>
+            <span class="btn-icon">→</span>
+          </button>
+        </form>
+
+        <div id="error-message" class="error-message" style="display: none;"></div>
+        <div id="success-message" class="success-message" style="display: none;"></div>
+      </div>
+    </div>
+
+    <div class="features-preview">
+      <h3>What you can do with TaskFlow:</h3>
+      <ul class="features-list">
+        <li>📝 Organize tasks across Todo, Completed, and Archived stages</li>
+        <li>⏰ Track when tasks were last modified</li>
+        <li>🔄 Move tasks between different stages easily</li>
+        <li>💾 Your data persists across browser sessions</li>
+        <li>📱 Works perfectly on desktop and mobile</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Hidden div for future localization as required -->
+  <div id="locale-placeholder" data-locale="guj" style="display: none;"></div>
+
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow - Todo Management</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="app-page">
+  <div class="app-container">
+    <!-- Header Section -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="logo-mini">
+          <span class="logo-icon">📋</span>
+          <span class="logo-text">TaskFlow</span>
+        </div>
+      </div>
+      
+      <div class="header-center">
+        <div class="user-info">
+          <img id="user-avatar" class="avatar" alt="User Avatar" />
+          <div class="user-details">
+            <h2 id="username" class="username"></h2>
+            <span class="user-status">Productive Today!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button id="signout-btn" class="signout-btn" title="Sign Out">
+          <span>Sign Out</span>
+          <span class="signout-icon">🚪</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Task Input Section -->
+      <section class="task-input-section">
+        <div class="input-container">
+          <input 
+            type="text" 
+            id="new-task-input" 
+            class="task-input"
+            placeholder="What needs to be done?"
+            maxlength="200"
+          >
+          <button id="add-task-btn" class="add-task-btn" title="Add Task">
+            <span class="add-icon">+</span>
+            <span class="add-text">Add Task</span>
+          </button>
+        </div>
+        <div id="task-input-error" class="input-error" style="display: none;"></div>
+      </section>
+
+      <!-- Task Stages Section -->
+      <section class="task-stages">
+        <div class="stage-container">
+          <!-- Todo Stage -->
+          <div class="stage" id="todo-stage" data-stage="todo">
+            <div class="stage-header">
+              <h3 class="stage-title">
+                <span class="stage-icon">📝</span>
+                <span class="stage-name">Todo</span>
+                <span class="stage-count" id="todo-count">(0)</span>
+              </h3>
+            </div>
+            <div class="task-list" id="todo-list"></div>
+          </div>
+
+          <!-- Completed Stage -->
+          <div class="stage" id="completed-stage" data-stage="completed">
+            <div class="stage-header">
+              <h3 class="stage-title">
+                <span class="stage-icon">✅</span>
+                <span class="stage-name">Completed</span>
+                <span class="stage-count" id="completed-count">(0)</span>
+              </h3>
+            </div>
+            <div class="task-list" id="completed-list"></div>
+          </div>
+
+          <!-- Archived Stage -->
+          <div class="stage" id="archived-stage" data-stage="archived">
+            <div class="stage-header">
+              <h3 class="stage-title">
+                <span class="stage-icon">📦</span>
+                <span class="stage-name">Archived</span>
+                <span class="stage-count" id="archived-count">(0)</span>
+              </h3>
+            </div>
+            <div class="task-list" id="archived-list"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay" style="display: none;">
+      <div class="loading-spinner"></div>
+      <p>Loading your tasks...</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
